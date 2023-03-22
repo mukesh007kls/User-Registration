@@ -51,4 +51,16 @@ public class UserRegistrationTests {
         boolean result=userRegistration.email("mallikanti2000gmail.com");
         Assert.assertFalse(result);
     }
+
+    @Test
+    public void givenPhoneNumberMatchesRegex(){
+        boolean result=userRegistration.phoneNumber("1 9505850673");
+        Assert.assertTrue(result);
+    }
+
+    @Test
+    public void givenPhoneNumberDoesNotMatchRegex(){
+        boolean result=userRegistration.phoneNumber("9505850673");
+        Assert.assertFalse(result);
+    }
 }
