@@ -6,12 +6,7 @@ public class UserRegistration {
     private static final String LAST_NAME_REGEX=FIRST_NAME_REGEX;
     private static final String EMAIL_ID_REGEX="^\\w+[._+-]?\\w+@\\D+[.]+[a-z]{2,3}[.]?[a-z]{0,3}$";
     private static final String PHONE_NUMBER_REGEX="^[0-9]{1,3}[ ][0-9]{10}$";
-
-    public static void main(String[] args) {
-        UserRegistration userRegistration=new UserRegistration();
-        String emailid="mallikanti@gmail.com";
-        System.out.println(userRegistration.email(emailid));
-    }
+    private static final String PASSWORD_REGEX="^\\w{8,}$";
     public boolean firstName(String firstName){
         return firstName.matches(FIRST_NAME_REGEX);
     }
@@ -26,5 +21,9 @@ public class UserRegistration {
 
     public boolean phoneNumber(String phoneNumber){
         return phoneNumber.matches(PHONE_NUMBER_REGEX);
+    }
+
+    public boolean password(String password){
+        return password.matches(PASSWORD_REGEX);
     }
 }
