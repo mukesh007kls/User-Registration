@@ -65,14 +65,32 @@ public class UserRegistrationTests {
     }
 
     @Test
-    public void givenPasswordMatchesRegex(){
-        boolean result=userRegistration.password("MUKHIKlsa21");
+    public void givenPasswordMatchesRegexOne(){
+        boolean result=userRegistration.passwordRule1("mukhilsa");
         Assert.assertTrue(result);
     }
 
     @Test
-    public void givenPasswordDoesNotMatchRegexLessThan8Char(){
-        boolean result=userRegistration.password("MUKHIkl");
+    public void givenPasswordDoesNotMatchRegexOneLessThan8Char(){
+        boolean result=userRegistration.passwordRule1("mukhikl");
+        Assert.assertFalse(result);
+    }
+
+    @Test
+    public void givenPasswordDoesNotMatchRegexOneHasUpperCase(){
+        boolean result=userRegistration.passwordRule1("MUKHIkl");
+        Assert.assertFalse(result);
+    }
+
+    @Test
+    public void givenPasswordMatchesRegexTwo(){
+        boolean result=userRegistration.passwordRule2("MUKHIKlsa");
+        Assert.assertTrue(result);
+    }
+
+    @Test
+    public void givenPasswordMatchesRegexTwoHasNoUpperCase(){
+        boolean result=userRegistration.passwordRule2("mukhiKlsa");
         Assert.assertFalse(result);
     }
 }
