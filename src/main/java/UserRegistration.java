@@ -5,6 +5,7 @@ public class UserRegistration {
     private static final String PHONE_NUMBER_REGEX="^[0-9]{1,3}[ ][0-9]{10}$";
     private static final String PASSWORD_REGEX_ONE="^\\D{8,}$";
     private static final String PASSWORD_REGEX_TWO="^(?=.*[A-Z])\\D{7,}$";
+    private static final String PASSWORD_REGEX_THREE="(?=.*[A-Z])(?=.*[0-9])\\w{6,}$";
     public boolean firstName(String firstName){
         return firstName.matches(FIRST_NAME_REGEX);
     }
@@ -27,5 +28,9 @@ public class UserRegistration {
 
     public boolean passwordRule2(String password){
         return password.matches(PASSWORD_REGEX_TWO);
+    }
+
+    public boolean passwordRule3(String password){
+        return  password.matches(PASSWORD_REGEX_THREE);
     }
 }

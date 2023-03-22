@@ -90,7 +90,19 @@ public class UserRegistrationTests {
 
     @Test
     public void givenPasswordMatchesRegexTwoHasNoUpperCase(){
-        boolean result=userRegistration.passwordRule2("mukhiKlsa");
+        boolean result=userRegistration.passwordRule2("mukhiklsa");
+        Assert.assertFalse(result);
+    }
+
+    @Test
+    public void givenPasswordMatchesRegexThree(){
+        boolean result=userRegistration.passwordRule3("MUKHIklsa2921");
+        Assert.assertTrue(result);
+    }
+
+    @Test
+    public void givenPasswordDoesNotMatchRegexThreeWithoutNumber(){
+        boolean result=userRegistration.passwordRule3("MUKHIklsa");
         Assert.assertFalse(result);
     }
 }
