@@ -1,7 +1,7 @@
 public class UserRegistration {
     private static final String FIRST_NAME_REGEX="^[A-Z]{1}[a-z]{2,}";
     private static final String LAST_NAME_REGEX=FIRST_NAME_REGEX;
-    private static final String EMAIL_ID_REGEX="^\\w+[._+-]?\\w+@\\D+[.]+[a-z]{2,3}[.]?[a-z]{0,3}$";
+    private static final String EMAIL_ID_REGEX="^\\w+[._+-]?\\w+@\\w{3,}+[.]+[a-z]{2,3}[.]?[a-z]{0,3}$";
     private static final String PHONE_NUMBER_REGEX="^[0-9]{1,3}[ ][0-9]{10}$";
     private static final String PASSWORD_REGEX_ONE="^\\D{8,}$";
     private static final String PASSWORD_REGEX_TWO="^(?=.*[A-Z])\\D{7,}$";

@@ -117,4 +117,10 @@ public class UserRegistrationTests {
         boolean result=userRegistration.passwordRule4("MUKHIklsa2921");
         Assert.assertFalse(result);
     }
+
+    @Test
+    public void givenEmailIdDoesNotMatchRegexHasDomainNameLessThan3Char(){
+        boolean result=userRegistration.email("mallikanti.2000@g1.com");
+        Assert.assertFalse(result);
+    }
 }
