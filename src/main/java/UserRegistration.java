@@ -1,3 +1,6 @@
+import java.util.function.Predicate;
+import java.util.regex.Pattern;
+
 public class UserRegistration {
     private static final String FIRST_NAME_REGEX = "^[A-Z]{1}[a-z]{2,}";
     private static final String LAST_NAME_REGEX = FIRST_NAME_REGEX;
@@ -10,72 +13,73 @@ public class UserRegistration {
 
     public boolean firstName(String firstName) throws UserException {
         try {
-            return firstName.matches(FIRST_NAME_REGEX);
-        }catch (NullPointerException exception){
-            throw new UserException(UserException.UserExceptionType.Null,"Invalid input");
+            Predicate<String> stringPredicate = p -> Pattern.compile(FIRST_NAME_REGEX).matcher(p).matches();
+            return stringPredicate.test(firstName);
+        } catch (NullPointerException exception) {
+            throw new UserException(UserException.UserExceptionType.Null, "Invalid input");
         }
     }
 
     public boolean lastName(String lastName) throws UserException {
         try {
-            return lastName.matches(LAST_NAME_REGEX);
-        }catch (NullPointerException exception){
-            throw new UserException(UserException.UserExceptionType.Null,"Invalid input");
+            Predicate<String> stringPredicate = p -> Pattern.compile(LAST_NAME_REGEX).matcher(p).matches();
+            return stringPredicate.test(lastName);
+        } catch (NullPointerException exception) {
+            throw new UserException(UserException.UserExceptionType.Null, "Invalid input");
         }
-
     }
 
     public boolean email(String emailID) throws UserException {
         try {
-            return emailID.matches(EMAIL_ID_REGEX);
-        }catch (NullPointerException exception){
-            throw new UserException(UserException.UserExceptionType.Null,"Invalid input");
+            Predicate<String> stringPredicate = p -> Pattern.compile(EMAIL_ID_REGEX).matcher(p).matches();
+            return stringPredicate.test(emailID);
+        } catch (NullPointerException exception) {
+            throw new UserException(UserException.UserExceptionType.Null, "Invalid input");
         }
-
     }
 
     public boolean phoneNumber(String phoneNumber) throws UserException {
         try {
-            return phoneNumber.matches(PHONE_NUMBER_REGEX);
-        }catch (NullPointerException exception){
-            throw new UserException(UserException.UserExceptionType.Null,"Invalid input");
+            Predicate<String> stringPredicate = p -> Pattern.compile(PHONE_NUMBER_REGEX).matcher(p).matches();
+            return stringPredicate.test(phoneNumber);
+        } catch (NullPointerException exception) {
+            throw new UserException(UserException.UserExceptionType.Null, "Invalid input");
         }
-
     }
 
     public boolean passwordRule1(String password) throws UserException {
         try {
-            return password.matches(PASSWORD_REGEX_ONE);
-        }catch (NullPointerException exception){
-            throw new UserException(UserException.UserExceptionType.Null,"Invalid input");
+            Predicate<String> stringPredicate = p -> Pattern.compile(PASSWORD_REGEX_ONE).matcher(p).matches();
+            return stringPredicate.test(password);
+        } catch (NullPointerException exception) {
+            throw new UserException(UserException.UserExceptionType.Null, "Invalid input");
         }
-
     }
 
     public boolean passwordRule2(String password) throws UserException {
         try {
-            return password.matches(PASSWORD_REGEX_TWO);
-        }catch (NullPointerException exception){
-            throw new UserException(UserException.UserExceptionType.Null,"Invalid input");
+            Predicate<String> stringPredicate = p -> Pattern.compile(PASSWORD_REGEX_TWO).matcher(p).matches();
+            return stringPredicate.test(password);
+        } catch (NullPointerException exception) {
+            throw new UserException(UserException.UserExceptionType.Null, "Invalid input");
         }
-
     }
 
     public boolean passwordRule3(String password) throws UserException {
         try {
-            return password.matches(PASSWORD_REGEX_THREE);
-        }catch (NullPointerException exception){
-            throw new UserException(UserException.UserExceptionType.Null,"Invalid input");
+            Predicate<String> stringPredicate = p -> Pattern.compile(PASSWORD_REGEX_THREE).matcher(p).matches();
+            return stringPredicate.test(password);
+        } catch (NullPointerException exception) {
+            throw new UserException(UserException.UserExceptionType.Null, "Invalid input");
         }
-
     }
 
     public boolean passwordRule4(String password) throws UserException {
         try {
-            return password.matches(PASSWORD_REGEX_FOUR);
-        }catch (NullPointerException exception){
-            throw new UserException(UserException.UserExceptionType.Null,"Invalid input");
+            Predicate<String> stringPredicate = p -> Pattern.compile(PASSWORD_REGEX_FOUR).matcher(p).matches();
+            return stringPredicate.test(password);
+        } catch (NullPointerException exception) {
+            throw new UserException(UserException.UserExceptionType.Null, "Invalid input");
         }
-
     }
 }

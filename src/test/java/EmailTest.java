@@ -10,8 +10,8 @@ import java.util.Collection;
 @RunWith(Parameterized.class)
 public class EmailTest {
 
-    private String emailID;
-    private boolean expectedResult;
+    private final String emailID;
+    private final boolean expectedResult;
     private UserRegistration userRegistration;
 
     public EmailTest(String emailID, boolean expectedResult) {
@@ -25,7 +25,7 @@ public class EmailTest {
     }
 
     @Parameterized.Parameters()
-    public static Collection testMailIDs(){
+    public static Collection<Object> testMailIDs(){
         return Arrays.asList(new Object[][]{
                 {"mallikanti2000@gmail.com",true},
                 {"mallikanti-2000@gmail.com",true},
