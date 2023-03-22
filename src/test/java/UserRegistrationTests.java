@@ -105,4 +105,16 @@ public class UserRegistrationTests {
         boolean result=userRegistration.passwordRule3("MUKHIklsa");
         Assert.assertFalse(result);
     }
+
+    @Test
+    public void givenPasswordMatchesRegexFour(){
+        boolean result=userRegistration.passwordRule4("MUKHIklsa@2921");
+        Assert.assertTrue(result);
+    }
+
+    @Test
+    public void givenPasswordDoesNotMatchesRegexFourHasNoSpecialChar(){
+        boolean result=userRegistration.passwordRule4("MUKHIklsa2921");
+        Assert.assertFalse(result);
+    }
 }
