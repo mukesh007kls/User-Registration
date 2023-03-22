@@ -8,35 +8,74 @@ public class UserRegistration {
     private static final String PASSWORD_REGEX_THREE = "^(?=.*[A-Z])(?=.*\\d)\\w{6,}$";
     private static final String PASSWORD_REGEX_FOUR = "^(?=.*[!@#$%])(?=.*[A-Z])(?=.*\\d)(?=.*[a-z]).{8,30}$";
 
-    public boolean firstName(String firstName) {
-        return firstName.matches(FIRST_NAME_REGEX);
+    public boolean firstName(String firstName) throws UserException {
+        try {
+            return firstName.matches(FIRST_NAME_REGEX);
+        }catch (NullPointerException exception){
+            throw new UserException(UserException.UserExceptionType.Null,"Invalid input");
+        }
     }
 
-    public boolean lastName(String lastName) {
-        return lastName.matches(LAST_NAME_REGEX);
+    public boolean lastName(String lastName) throws UserException {
+        try {
+            return lastName.matches(LAST_NAME_REGEX);
+        }catch (NullPointerException exception){
+            throw new UserException(UserException.UserExceptionType.Null,"Invalid input");
+        }
+
     }
 
-    public boolean email(String emailID) {
-        return emailID.matches(EMAIL_ID_REGEX);
+    public boolean email(String emailID) throws UserException {
+        try {
+            return emailID.matches(EMAIL_ID_REGEX);
+        }catch (NullPointerException exception){
+            throw new UserException(UserException.UserExceptionType.Null,"Invalid input");
+        }
+
     }
 
-    public boolean phoneNumber(String phoneNumber) {
-        return phoneNumber.matches(PHONE_NUMBER_REGEX);
+    public boolean phoneNumber(String phoneNumber) throws UserException {
+        try {
+            return phoneNumber.matches(PHONE_NUMBER_REGEX);
+        }catch (NullPointerException exception){
+            throw new UserException(UserException.UserExceptionType.Null,"Invalid input");
+        }
+
     }
 
-    public boolean passwordRule1(String password) {
-        return password.matches(PASSWORD_REGEX_ONE);
+    public boolean passwordRule1(String password) throws UserException {
+        try {
+            return password.matches(PASSWORD_REGEX_ONE);
+        }catch (NullPointerException exception){
+            throw new UserException(UserException.UserExceptionType.Null,"Invalid input");
+        }
+
     }
 
-    public boolean passwordRule2(String password) {
-        return password.matches(PASSWORD_REGEX_TWO);
+    public boolean passwordRule2(String password) throws UserException {
+        try {
+            return password.matches(PASSWORD_REGEX_TWO);
+        }catch (NullPointerException exception){
+            throw new UserException(UserException.UserExceptionType.Null,"Invalid input");
+        }
+
     }
 
-    public boolean passwordRule3(String password) {
-        return password.matches(PASSWORD_REGEX_THREE);
+    public boolean passwordRule3(String password) throws UserException {
+        try {
+            return password.matches(PASSWORD_REGEX_THREE);
+        }catch (NullPointerException exception){
+            throw new UserException(UserException.UserExceptionType.Null,"Invalid input");
+        }
+
     }
 
-    public boolean passwordRule4(String password) {
-        return password.matches(PASSWORD_REGEX_FOUR);
+    public boolean passwordRule4(String password) throws UserException {
+        try {
+            return password.matches(PASSWORD_REGEX_FOUR);
+        }catch (NullPointerException exception){
+            throw new UserException(UserException.UserExceptionType.Null,"Invalid input");
+        }
+
     }
 }

@@ -44,7 +44,12 @@ public class EmailTest {
     }
     @Test
     public void givenMultipleEmailId_ShouldReturnTrueOrFalse(){
-        Assert.assertEquals(expectedResult,userRegistration.email(emailID));
+        try {
+            Assert.assertEquals(expectedResult,userRegistration.email(emailID));
+
+        }catch (UserException exception){
+            System.out.println(exception.getMessage());
+        }
     }
 
 }
