@@ -39,4 +39,16 @@ public class UserRegistrationTests {
         boolean result=userRegistration.lastName("ma");
         Assert.assertFalse(result);
     }
+
+    @Test
+    public void givenEmailIdMatchesRegex(){
+        boolean result=userRegistration.email("mallikanti2000@gmail.com");
+        Assert.assertTrue(result);
+    }
+
+    @Test
+    public void givenEmailIdDoesNotMatchRegex(){
+        boolean result=userRegistration.email("mallikanti2000gmail.com");
+        Assert.assertFalse(result);
+    }
 }
