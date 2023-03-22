@@ -21,4 +21,22 @@ public class UserRegistrationTests {
         boolean result=userRegistration.firstName("Mu");
         Assert.assertFalse(result);
     }
+
+    @Test
+    public void givenLastNameMatchesTheRegex(){
+        boolean result=userRegistration.lastName("Mallikanti");
+        Assert.assertTrue(result);
+    }
+
+    @Test
+    public void givenLastNameDoestMatchRegex(){
+        boolean result=userRegistration.lastName("mallikanti");
+        Assert.assertFalse(result);
+    }
+
+    @Test
+    public void givenLastNameHasLessThan3Char(){
+        boolean result=userRegistration.lastName("ma");
+        Assert.assertFalse(result);
+    }
 }
